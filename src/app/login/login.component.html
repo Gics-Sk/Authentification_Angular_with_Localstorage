@@ -1,0 +1,25 @@
+<div class="card">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(user,password)">
+    <label for="user" class="form-label" >Utilisateur</label>
+    <input
+      type="text"
+      class="form-control"
+      id="user"
+formControlName="user"
+
+    />
+    <label for="password" class="form-label">Mot de passe</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      formControlName="password"
+   
+    />
+    <input type="submit" class="form-control" [disabled]="loginForm.invalid" value="Envoyé">
+  {{loginForm.value.user}}
+  {{loginForm.value.password}}
+  <p>Form Status: {{loginForm.status}}</p>
+  </form>
+</div>
+

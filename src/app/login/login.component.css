@@ -1,0 +1,21 @@
+*{
+               font-weight: bold;
+}
+.card {
+               width: 500px;
+               margin:5rem auto;
+               padding: 1rem;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+input[type="submit"]{
+               margin-block:2rem;
+               color: #fff;
+               background:#6766ff;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+input[type="submit"]:hover{
+               background:#3636f3;
+}
+input{
+               padding: 1rem;
+}

@@ -1,0 +1,9 @@
+.card {
+               width: 500px;
+               margin:5rem auto;
+               padding: 1rem;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.red{
+               color: #ff0000;
+}
