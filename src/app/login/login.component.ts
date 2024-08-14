@@ -9,8 +9,8 @@ import { FormGroup,Validators,FormBuilder } from '@angular/forms';
 export class LoginComponent {
   loginForm: FormGroup;
   storageData: any;
-password !: string;
-user !: string;
+password ?: string;
+user ?: string;
 constructor(private formBuilder:FormBuilder){
 this.loginForm = this.formBuilder.group({
   user :['',Validators.required],
@@ -22,9 +22,11 @@ this.loginForm = this.formBuilder.group({
 });
 }
 onSubmit(user:string,password:string){
-localStorage.setItem("User",user);
-localStorage.setItem("Password",password);
-console.log(localStorage.getItem("User"));
+  localStorage.setItem("User",JSON.stringify(user));
+  localStorage.setItem("Password",JSON.stringify(password));
+// localStorage.setItem("User",user);
+// localStorage.setItem("Password",password);
+console.log(localStorage.getItem(user));
 
     
 //   if(this.loginForm.valid){
