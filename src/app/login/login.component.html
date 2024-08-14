@@ -1,0 +1,32 @@
+<form (submit)="onSubmit()" [formGroup]="passForm">
+    <p class="Alert" *ngIf="passForm.status === 'INVALID' ">Les champs Nom et Email sont requis</p>
+    <div class="form-group">
+        <input type="text" formControlName="name"
+        [(ngModel)]="passForm.value.name"
+        class="form-control" id="usrname" placeholder="...">
+        <label for="usrname">Nom d'utilisateur</label>
+            <p> {{ passForm.value.name }}</p>
+      </div>
+      <div class="psw">
+        <input (keyup)="keyFunction()" ng-blur="onBlur()"
+        ng-focus="onFocus()" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Doit contenir au moins un chiffre et une lettre majuscule et une lettre minuscule, et au moins 8 caractères ou plus"
+        type="password" [(ngModel)]="passForm.value.password"
+        formControlName="password" class="form-control"
+        id="psw"
+        placeholder="Password">
+        <label for="psw">Mot de passe</label>
+                <p> {{ passForm.value.password }}</p>
+    </div>
+    <p>Formulaire Status: {{ passForm.status | json }}</p>
+    <div>
+        <button>Enregistrer
+            <svg type="submit" value="Enregistrer" *ngIf="passForm.status === 'INVALID'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+            </svg>
+            <svg type="submit" value="Enregistrer" *ngIf="passForm.status !== 'INVALID'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16">
+            <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2"/>
+          </svg>
+        </button>
+    </div>
+    <!-- <p> {{ formbuilder.password }} </p> -->
+</form>
