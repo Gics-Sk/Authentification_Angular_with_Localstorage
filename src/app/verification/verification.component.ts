@@ -16,7 +16,7 @@ export class VerificationComponent {
     { rule: 'Au moins un caractère spécial', test: (password: string) => /[!@#$%^&*(),.?":{}|<>]/.test(password) },
   ]; 
   ng0nChanges(){
-  console.log('fff');
+  
   
   }
 
