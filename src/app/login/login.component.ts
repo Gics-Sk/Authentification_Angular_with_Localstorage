@@ -41,7 +41,7 @@ validatePassword(password: string) {
       localStorage.setItem("User", JSON.stringify(user));
       localStorage.setItem("Password", JSON.stringify(password));
       Swal.fire({
-        position: "top-end",
+        position: "center",
         icon: "success",
         title: "Connexion Réussie",
         showConfirmButton: false,
