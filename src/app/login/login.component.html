@@ -1,0 +1,25 @@
+<div class="card">
+  <h1 class="py-2">Authentification</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label for="user" class="form-label" >Utilisateur</label>
+    <input
+      type="text"
+      class="form-control"
+      id="user"
+formControlName="user"
+required
+    />
+    <label for="password" class="form-label">Mot de passe</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      formControlName="password"
+      required
+    />
+    
+    <input type="submit" class="form-control" [disabled]="!loginForm.valid" value="Envoyé">
+ 
+  </form>
+</div>
+<app-verification [verifpassword]="loginForm"></app-verification>
